@@ -30,6 +30,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.ContentDisplay;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
@@ -147,7 +149,33 @@ public class AfficherExerciceController implements Initializable {
         idEq_col.setCellValueFactory(new PropertyValueFactory<>("equipementId"));
         nom_col.setCellValueFactory(new PropertyValueFactory<>("nomExercice"));
         
-        
+            image_col.setCellFactory(column ->{
+            return new TableCell<Exercice,String>(){
+                final ImageView imageView = new ImageView();
+                    {
+                        setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
+                        setGraphic(imageView);
+                    }
+                protected void updateItem(String iPath, boolean empty) {
+                    super.updateItem(iPath, empty);
+                    if (iPath == null || empty) {
+                        imageView.setImage(null);
+                    }else{
+                        try {
+                            File file = new File(iPath);
+                            Image image = new Image(file.toURI().toString());
+                            imageView.setImage(image);
+                            imageView.setFitWidth(50); // Set the desired width and height here
+                            imageView.setFitHeight(50);
+                        } catch (Exception ex) {
+                            System.out.println(ex.getMessage());
+                        }
+                        
+                    }
+                }    
+            };
+        }
+        );
         image_col.setCellValueFactory(new PropertyValueFactory<>("imageExercice"));
        duration_col.setCellValueFactory(new PropertyValueFactory<>("duration"));
        repetition_col.setCellValueFactory(new PropertyValueFactory<>("repetation"));

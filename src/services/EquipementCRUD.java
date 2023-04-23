@@ -70,7 +70,7 @@ public class EquipementCRUD implements EntityCRUD<Equipement> {
                 Equipement p = new  Equipement();
                 p.setId(rs.getInt(1));
                 p.setNomEquipement(rs.getString("nom_equipement"));
-                p.setImageEquipement(rs.getString("image_equipement"));
+                p.setImageEquipement("C:\\xampp\\htdocs\\"+rs.getString("image_equipement"));
                 ls.add(p);
             }
     

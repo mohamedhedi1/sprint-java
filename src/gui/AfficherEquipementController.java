@@ -5,9 +5,18 @@
  */
 package gui;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
 import entities.Equipement;
 import entities.Exercice;
+import java.awt.Desktop;
+import java.awt.print.PrinterException;
+import java.awt.print.PrinterJob;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
@@ -25,7 +34,10 @@ import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContentDisplay;
@@ -40,8 +52,13 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.util.PDFTextStripper;
+
 import services.EquipementCRUD;
 import services.ExerciceCRUD;
+import services.PDFViewerController;
 import services.PdfGenerator;
 
 /**
@@ -285,14 +302,51 @@ public String generateRandomString() {
     
     }
 
-    @FXML
+   /* @FXML
     private void GenerePDF(ActionEvent event) {
         PdfGenerator pdf = new PdfGenerator();
         pdf.GenererPdf();
         
         
+        
     }
+*/
+    
+    @FXML
+private void GenerePDF(ActionEvent event) throws PrinterException {
+    // Créer un nouveau document PDF
+    //Document document = new Document();
+    
+    //try {
+       /* // Créer un écrivain PDF qui écrira le document dans un fichier temporaire
+        PdfWriter.getInstance(document, new FileOutputStream("C:\\Users\\Mohamed\\Downloads\\exemple12.pdf"));
+        
+        // Ouvrir le document pour écrire du contenu
+        document.open();
+        
+        // Ajouter du texte au document
+        document.add(new Paragraph("Bonjour"));
+        
+        // Fermer le document
+        document.close();*/
+        
+        // Créer un objet Desktop pour ouvrir le fichier PDF dans le lecteur PDF par défaut de l'utilisateur
+/*try (PDDocument document = PDDocument.load(new File("C:\\Users\\Mohamed\\Downloads\\exemple12.pdf"))) {
+    PDFTextStripper stripper = new PDFTextStripper();
+    String text = stripper.getText(document);
+    System.out.println(text); // afficher le contenu du PDF dans la console
+    
+    PrinterJob printerJob = PrinterJob.getPrinterJob();
+    printerJob.setPageable(new PDFPageable(document));
+    if (printerJob.printDialog()) {
+        printerJob.print();
+    }
+} catch (IOException e) {
+    e.printStackTrace();
+}*/
+}
 
+    
     @FXML
     private void switchAnarchor(ActionEvent event) {
         AfficherAnarchor.setVisible(false);

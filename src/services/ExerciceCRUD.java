@@ -50,7 +50,7 @@ public class ExerciceCRUD implements EntityCRUD<Exercice> {
                 p.setId(rs.getInt(1));
                 p.setEquipementId(rs.getInt("equipement_id"));
                 p.setNomExercice(rs.getString("nom_exercice"));
-                p.setImageExercice(rs.getString("image_exercice"));
+                p.setImageExercice("C:\\xampp\\htdocs\\"+rs.getString("image_exercice"));
                 
                  p.setDuration(rs.getInt("duration"));
                   p.setRepetation(rs.getInt("repetation"));

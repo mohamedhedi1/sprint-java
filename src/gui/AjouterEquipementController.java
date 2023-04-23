@@ -58,7 +58,7 @@ public class AjouterEquipementController implements Initializable {
     @FXML
     private Button AjouterEq;
     
-    String imagePath="";
+    String imagePath="imgSportConnect/";
     File selectedFile;
     @FXML
     private Button BtnAnnuler;
@@ -129,7 +129,7 @@ public class AjouterEquipementController implements Initializable {
             alertType.setHeaderText("Nom contient au minimum 5 caractéres");
             alertType.show();
         }
-        else if(imagePath =="")
+        else if(imagePath =="imgSportConnect/")
         {
              Alert alertType = new Alert(Alert.AlertType.ERROR);
             alertType.setTitle("Error");
@@ -199,7 +199,7 @@ public String generateRandomString() {
         // The user selected an image file
         System.out.println("Selected file: " + selectedFile.getAbsolutePath());
         String chGenere = generateRandomString();
-        imagePath=chGenere+selectedFile.getName();
+        imagePath+=chGenere+selectedFile.getName();
         Path source = Paths.get(selectedFile.getAbsolutePath());
         System.out.println(selectedFile.getName());
         Path destination = Paths.get("C:\\xampp\\htdocs\\imgSportConnect\\" + chGenere +selectedFile.getName());

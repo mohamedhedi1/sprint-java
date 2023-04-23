@@ -17,6 +17,18 @@ public class Exercice {
     private int duration;
     private int repetation;
     private String instruction;
+    private String nomEquipement;
+
+    public Exercice(int id, int equipementId, String nomExercice, String imageExercice, int duration, int repetation, String instruction, String nomEquipement) {
+        this.id = id;
+        this.equipementId = equipementId;
+        this.nomExercice = nomExercice;
+        this.imageExercice = imageExercice;
+        this.duration = duration;
+        this.repetation = repetation;
+        this.instruction = instruction;
+        this.nomEquipement = nomEquipement;
+    }
     
     
 
