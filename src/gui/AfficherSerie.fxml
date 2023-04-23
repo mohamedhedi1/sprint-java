@@ -7,13 +7,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="509.0" prefWidth="695.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AfficherSerieController">
+<AnchorPane id="AnchorPane" prefHeight="509.0" prefWidth="1077.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AfficherSerieController">
    <children>
-      <TableView fx:id="serieTable" layoutX="4.0" layoutY="81.0" prefHeight="352.0" prefWidth="676.0">
+      <TableView fx:id="serieTable" layoutX="69.0" layoutY="81.0" prefHeight="352.0" prefWidth="982.0">
         <columns>
-          <TableColumn fx:id="id_col" prefWidth="75.0" text="Id" />
-          <TableColumn fx:id="nom_col" prefWidth="191.0" text="serie" />
-            <TableColumn fx:id="col_listEx" prefWidth="409.0" text="liste exercices" />
+          <TableColumn fx:id="id_col" prefWidth="75.0" text="Id" visible="false" />
+          <TableColumn fx:id="nom_col" prefWidth="142.0" text="serie" />
+            <TableColumn fx:id="col_image" prefWidth="282.0" text="image" />
+            <TableColumn fx:id="col_listEx" prefWidth="459.0" text="liste exercices" />
         </columns>
       </TableView>
       <Button fx:id="btnSupprimer" layoutX="500.0" layoutY="440.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="28.0" prefWidth="180.0" style="-fx-background-color: #FA8072;" text="Supprimer" />

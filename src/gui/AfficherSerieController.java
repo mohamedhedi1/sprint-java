@@ -8,6 +8,7 @@ package gui;
 import entities.Equipement;
 import entities.Exercice;
 import entities.Serie;
+import java.io.File;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -17,9 +18,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ContentDisplay;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import services.EquipementCRUD;
 import services.ExerciceCRUD;
 import services.SerieCRUD;
@@ -41,6 +46,8 @@ public class AfficherSerieController implements Initializable {
     private TableColumn<Serie, String> col_listEx;
     @FXML
     private Button btnSupprimer;
+    @FXML
+    private TableColumn<Serie, String> col_image;
 
     /**
      * Initializes the controller class.
@@ -69,7 +76,34 @@ public class AfficherSerieController implements Initializable {
         id_col.setCellValueFactory(new PropertyValueFactory<>("id"));
         nom_col.setCellValueFactory(new PropertyValueFactory<>("titreSerie"));
        col_listEx.setCellValueFactory(new PropertyValueFactory<>("imageSerie"));
-       
+        col_image.setCellFactory(column ->{
+            return new TableCell<Serie,String>(){
+                final ImageView imageView = new ImageView();
+                    {
+                        setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
+                        setGraphic(imageView);
+                    }
+                protected void updateItem(String iPath, boolean empty) {
+                    super.updateItem(iPath, empty);
+                    if (iPath == null || empty) {
+                        imageView.setImage(null);
+                    }else{
+                        try {
+                            File file = new File(iPath);
+                            Image image = new Image(file.toURI().toString());
+                            imageView.setImage(image);
+                            imageView.setFitWidth(50); // Set the desired width and height here
+                            imageView.setFitHeight(50);
+                        } catch (Exception ex) {
+                            System.out.println(ex.getMessage());
+                        }
+                        
+                    }
+                }    
+            };
+        }
+        );
+        col_image.setCellValueFactory(new PropertyValueFactory<>("imSerie"));
        
         
 
@@ -84,6 +118,7 @@ public class AfficherSerieController implements Initializable {
         id_col.setCellValueFactory(new PropertyValueFactory<>("id"));
         nom_col.setCellValueFactory(new PropertyValueFactory<>("nomEquipement"));
          col_listEx.setCellValueFactory(new PropertyValueFactory<>("imageSerie"));
+         col_image.setCellValueFactory(new PropertyValueFactory<>("imSerie"));
        
        
         

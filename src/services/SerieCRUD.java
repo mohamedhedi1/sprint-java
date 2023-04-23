@@ -44,13 +44,14 @@ public ObservableList<Serie> afficher() throws SQLException {
     ObservableList<Serie> ls = FXCollections.observableArrayList();
     Connection connection = MyConnection.getInstance().getCnx();
     Statement statement = connection.createStatement();
-    String req = "SELECT s.id, s.titre_serie, GROUP_CONCAT(e.nom_exercice SEPARATOR ', ') as nom_exercices FROM serie s INNER JOIN serie_exercice se ON s.id = se.serie_id INNER JOIN exercice e ON e.id = se.exercice_id GROUP BY s.id;";
+    String req = "SELECT s.id, s.titre_serie ,s.image_serie,  GROUP_CONCAT(e.nom_exercice SEPARATOR ', ') as nom_exercices FROM serie s INNER JOIN serie_exercice se ON s.id = se.serie_id INNER JOIN exercice e ON e.id = se.exercice_id GROUP BY s.id;";
     ResultSet rs = statement.executeQuery(req);
     while (rs.next()) {
         Serie serie = new Serie();
         serie.setId(rs.getInt(1));
         serie.setTitreSerie(rs.getString("titre_serie"));
         serie.setImageSerie(rs.getString("nom_exercices"));
+        serie.setImSerie("C:\\xampp\\htdocs\\"+rs.getString("image_serie"));
         ls.add(serie);
     }
     rs.close();

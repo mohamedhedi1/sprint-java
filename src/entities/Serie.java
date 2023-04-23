@@ -12,6 +12,22 @@ package entities;
 public class Serie {
     private int id;
     private String titreSerie;
+    private String imSerie;
+
+    public Serie(int id, String titreSerie, String imSerie, String imageSerie) {
+        this.id = id;
+        this.titreSerie = titreSerie;
+        this.imSerie = imSerie;
+        this.imageSerie = imageSerie;
+    }
+
+    public String getImSerie() {
+        return imSerie;
+    }
+
+    public void setImSerie(String imSerie) {
+        this.imSerie = imSerie;
+    }
     private String imageSerie;
 
     public Serie(int id, String titreSerie, String imageSerie) {

@@ -7,9 +7,12 @@ package gui;
 
 import entities.Serie;
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,6 +22,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.ResourceBundle;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -54,7 +58,7 @@ public class AjouterSerieController implements Initializable {
     private Button BtnAjouterImage;
     @FXML
     private ImageView imageuploadedID;
-      String imagePath="";
+      String imagePath="imgSportConnect/";
     File selectedFile;
     @FXML
     private Button btnAjouter;
@@ -97,26 +101,45 @@ public class AjouterSerieController implements Initializable {
         }
     }
 
-    @FXML
-    private void uploadImage(ActionEvent event) {
-           FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Select Image File");
-        fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"));
-         selectedFile = fileChooser.showOpenDialog(imageuploadedID.getScene().getWindow());
-        if (selectedFile != null) {
-            // The user selected an image file
-            System.out.println("Selected file: " + selectedFile.getAbsolutePath());
-            Path path = Paths.get(selectedFile.getAbsolutePath());
-    Path relativePath = path.subpath(path.getNameCount() - 2, path.getNameCount()).normalize();
-             imagePath = relativePath.toString().replace('\\', '/');
-             Image image = new Image(imagePath);
-             imageuploadedID.setImage(image);
-            // Add your code here to process the selected image file
-        }
-        
+      public String generateRandomString() {
+    int length = 7;
+    String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    Random rnd = new Random();
+    StringBuilder sb = new StringBuilder(length);
+    for (int i = 0; i < length; i++) {
+        sb.append(characters.charAt(rnd.nextInt(characters.length())));
     }
-
+    return sb.toString();
+}
+      
+ @FXML
+  private void uploadImage(ActionEvent event) {
+    FileChooser fileChooser = new FileChooser();
+    fileChooser.setTitle("Select Image File");
+    fileChooser.getExtensionFilters().addAll(
+            new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"));
+    File selectedFile = fileChooser.showOpenDialog(imageuploadedID.getScene().getWindow());
+    if (selectedFile != null) {
+        // The user selected an image file
+        System.out.println("Selected file: " + selectedFile.getAbsolutePath());
+        String chGenere = generateRandomString();
+        imagePath+=chGenere+selectedFile.getName();
+        Path source = Paths.get(selectedFile.getAbsolutePath());
+        System.out.println(selectedFile.getName());
+        Path destination = Paths.get("C:\\xampp\\htdocs\\imgSportConnect\\" + chGenere +selectedFile.getName());
+        
+        try {
+            Files.copy(source, destination, StandardCopyOption.REPLACE_EXISTING);
+            System.out.println("Image copied successfully to " + destination.toString());
+            
+            Image image = new Image(selectedFile.toURI().toString());
+            imageuploadedID.setImage(image);
+        } catch (IOException e) {
+            System.out.println("Error copying image: " + e.getMessage());
+        }
+    }
+}
+  
     @FXML
       private void AjouterSerie(ActionEvent event) throws SQLException {
           if(tfNomSerie.getText().toString().matches(".*[0-9]+.*"))
@@ -139,7 +162,7 @@ public class AjouterSerieController implements Initializable {
             alertType.setHeaderText("Champs de nom serie ne doit pas etre vide !");
             alertType.show();
         }
-           else if(imagePath =="")
+           else if(imagePath =="imgSportConnect/")
         {
              Alert alertType = new Alert(Alert.AlertType.ERROR);
             alertType.setTitle("Error");
