@@ -5,6 +5,8 @@
  */
 package entities;
 
+import java.util.Objects;
+
 /**
  *
  * @author Mohamed
@@ -13,6 +15,40 @@ public class Equipement {
     private int id;
     private String nomEquipement;
     private String imageEquipement;
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 79 * hash + this.id;
+        hash = 79 * hash + Objects.hashCode(this.nomEquipement);
+        hash = 79 * hash + Objects.hashCode(this.imageEquipement);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Equipement other = (Equipement) obj;
+        if (this.id != other.id) {
+            return false;
+        }
+        if (!Objects.equals(this.nomEquipement, other.nomEquipement)) {
+            return false;
+        }
+        if (!Objects.equals(this.imageEquipement, other.imageEquipement)) {
+            return false;
+        }
+        return true;
+    }
+    
 
     public Equipement() {
     }

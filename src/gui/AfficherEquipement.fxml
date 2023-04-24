@@ -22,7 +22,7 @@
       </AnchorPane>
       <AnchorPane fx:id="AfficherAnarchor" layoutY="3.0" prefHeight="509.0" prefWidth="833.0">
          <children>
-            <TableView fx:id="equipementTable" layoutX="147.0" layoutY="93.0" onMouseClicked="#selectItem" prefHeight="310.0" prefWidth="540.0">
+            <TableView fx:id="equipementTable" layoutX="147.0" layoutY="93.0" onMouseClicked="#selectItem" prefHeight="310.0" prefWidth="540.0" stylesheets="@dashboardDesign.css">
               <columns>
                 <TableColumn fx:id="id_col" prefWidth="75.0" text="Id" visible="false" />
                 <TableColumn fx:id="nom_col" prefWidth="155.0" text="Equipement" />
@@ -32,7 +32,7 @@
             <Button fx:id="btnSupprimer" layoutX="516.0" layoutY="420.0" mnemonicParsing="false" onAction="#Supprimer" prefHeight="31.0" prefWidth="171.0" style="-fx-background-color: #FA8072;" text="Supprimer" />
             <TextField fx:id="recherchetf" layoutX="500.0" layoutY="49.0" />
             <Button fx:id="pdfBtn" layoutX="409.0" layoutY="49.0" mnemonicParsing="false" onAction="#GenerePDF" text="PDF" />
-            <Button fx:id="btnAnarchor" layoutX="147.0" layoutY="420.0" mnemonicParsing="false" onAction="#switchAnarchor" prefHeight="31.0" prefWidth="171.0" text="Modifier" />
+            <Button fx:id="btnAnarchor" layoutX="147.0" layoutY="420.0" mnemonicParsing="false" onAction="#switchAnarchor" prefHeight="31.0" prefWidth="171.0" styleClass="update-btn" stylesheets="@dashboardDesign.css" text="Modifier" />
          </children>
       </AnchorPane>
    </children>

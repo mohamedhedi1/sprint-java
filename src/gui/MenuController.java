@@ -14,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 
@@ -28,6 +29,8 @@ public class MenuController implements Initializable {
     private BorderPane bp;
     @FXML
     private AnchorPane AP;
+    @FXML
+    private AnchorPane main_form;
 
     /**
      * Initializes the controller class.

@@ -95,4 +95,26 @@ public class EquipementCRUD implements EntityCRUD<Equipement> {
         st.executeUpdate(query);
     }
     
+    public List<Equipement> getList() throws SQLException
+    {
+          List<Equipement> myList = new ArrayList<>();
+        try {
+            String requete = "SELECT * FROM equipement";
+            Statement st = MyConnection.getInstance().getCnx()
+                    .createStatement();
+            ResultSet rs = st.executeQuery(requete);
+            while(rs.next()){
+                Equipement p = new  Equipement();
+                p.setId(rs.getInt(1));
+                p.setNomEquipement(rs.getString("nom_equipement"));
+                p.setImageEquipement("C:/xampp/htdocs/"+rs.getString("image_equipement"));
+                myList.add(p);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return myList;
+        
+    }
+    
 }

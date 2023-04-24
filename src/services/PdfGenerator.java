@@ -16,13 +16,15 @@ import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
+import entities.Equipement;
+import java.util.List;
 
 public class PdfGenerator {
 
     public PdfGenerator() {
     }
     
-  public void GenererPdf(){
+ public static void GenererPdf(String entity){
    try {
          // Créer un nouveau document PDF
          Document document = new Document();
@@ -39,29 +41,28 @@ public class PdfGenerator {
          
          
          // Ajouter un nouveau paragraphe contenant le texte
-         document.add(new Paragraph("Hello World!"));
+         document.add(new Paragraph("nos "+entity));
+         //if(entity == "equipements")
+         EquipementCRUD equipementCRUD = new EquipementCRUD();
+         List<Equipement> l = equipementCRUD.getList();
+         int taille  =l.size();
          
-          // Ajouter une image
-         Image image = Image.getInstance("C:\\Users\\Mohamed\\Desktop\\rio.jpg");
-         document.add(image);
-         
-          // Ajouter un nouveau tableau
-         PdfPTable table = new PdfPTable(3); // Nombre de colonnes = 3
-         // Ajouter une en-tête de tableau
-         PdfPCell cell = new PdfPCell(new Paragraph("En-tête de tableau"));
+         PdfPTable table = new PdfPTable(3);
+         PdfPCell cell = new PdfPCell();
          cell.setColspan(3);
          table.addCell(cell);
-         // Ajouter des cellules
-         table.addCell("Cellule 1");
-         table.addCell("Cellule 2");
-         table.addCell("Cellule 3");
-         table.addCell("Cellule 4");
-         table.addCell("Cellule 5");
-         table.addCell("Cellule 6");
-         // Ajouter le tableau au document
+         for(Equipement eq : l)
+          
+         {
+             //System.out.println(eq.getImageEquipement());
+              table.addCell(eq.getNomEquipement());
+              Image image = Image.getInstance(eq.getImageEquipement());
+              float largeurImage = 70f;
+              float hauteurImage = 70f;
+              table.addCell(image);
+         }
+       
          document.add(table);
-         
-         
          
          // Fermer le document
          document.close();
@@ -70,4 +71,5 @@ public class PdfGenerator {
          e.printStackTrace();
       }
   }
+
 }

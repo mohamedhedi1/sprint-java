@@ -29,6 +29,7 @@ import java.util.Random;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Stream;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
@@ -53,9 +54,14 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.util.PDFTextStripper;
+import org.apache.pdfbox.printing.PDFPageable;
+import org.apache.pdfbox.text.PDFTextStripper;
 
+import javafx.collections.transformation.FilteredList;
 import services.EquipementCRUD;
 import services.ExerciceCRUD;
 import services.PDFViewerController;
@@ -330,20 +336,33 @@ private void GenerePDF(ActionEvent event) throws PrinterException {
         // Fermer le document
         document.close();*/
         
+       
         // Créer un objet Desktop pour ouvrir le fichier PDF dans le lecteur PDF par défaut de l'utilisateur
-/*try (PDDocument document = PDDocument.load(new File("C:\\Users\\Mohamed\\Downloads\\exemple12.pdf"))) {
-    PDFTextStripper stripper = new PDFTextStripper();
-    String text = stripper.getText(document);
-    System.out.println(text); // afficher le contenu du PDF dans la console
-    
-    PrinterJob printerJob = PrinterJob.getPrinterJob();
-    printerJob.setPageable(new PDFPageable(document));
-    if (printerJob.printDialog()) {
-        printerJob.print();
-    }
-} catch (IOException e) {
-    e.printStackTrace();
-}*/
+        
+         PdfGenerator.GenererPdf("equipements");
+    String cheminFichierPDF = "C:\\Users\\Mohamed\\Downloads\\exemple12.pdf";
+
+      // Vérifier que le fichier existe
+      File fichierPDF = new File(cheminFichierPDF);
+      if (!fichierPDF.exists()) {
+         System.out.println("Le fichier PDF n'existe pas.");
+         return;
+      }
+
+      // Vérifier que le Desktop est supporté par la plateforme
+      if (!Desktop.isDesktopSupported()) {
+         System.out.println("Desktop n'est pas supporté.");
+         return;
+      }
+
+      // Ouvrir le fichier PDF avec le navigateur web par défaut
+      Desktop desktop = Desktop.getDesktop();
+      try {
+         desktop.browse(fichierPDF.toURI());
+      } catch (IOException e) {
+         e.printStackTrace();
+      }
+
 }
 
     
@@ -352,38 +371,26 @@ private void GenerePDF(ActionEvent event) throws PrinterException {
         AfficherAnarchor.setVisible(false);
         ModifierAnarchor.setVisible(true);
     }
-    
-    
-     /*public void RechercheAV(){
-                // Wrap the ObservableList in a FilteredList (initially display all data).
-        FilteredList<Equipement> filteredData = new FilteredList<>(data, b -> true);
-		
-		// 2. Set the filter Predicate whenever the filter changes.
-		recherchetf.textProperty().addListener((observable, oldValue, newValue) -> {
-			filteredData.setPredicate(tmp -> {
-				// If filter text is empty, display all persons.
-								
-				if (newValue == null || newValue.isEmpty()) {
-					return true;
-				}
-				
-				// Compare first name and last name of every person with filter text.
-				String lowerCaseFilter = newValue.toLowerCase();
-				
-				if (tmp.getNomEquipement().toLowerCase().indexOf(lowerCaseFilter) != -1 ) {
-					return true; // Filter matches first name.
-				} 
-			});
-		});
-                	// 3. Wrap the FilteredList in a SortedList. 
-		SortedList<Equipement> sortedData = new SortedList<>(filteredData);
-		
-		// 4. Bind the SortedList comparator to the TableView comparator.
-		// 	  Otherwise, sorting the TableView would have no effect.
-		sortedData.comparatorProperty().bind(equipementTable.comparatorProperty());
-		
-		// 5. Add sorted (and filtered) data to the table.
-		equipementTable.setItems(sortedData);
-    }*/
-    
+/*
+public void RechercheAV() throws SQLException {
+    // Wrap the ObservableList in a FilteredList (initially display all data).
+    FilteredList<Equipement> filteredData = new FilteredList<>(EquipementListData(), e -> true);
+    recherchetf.textProperty().addListener((observable, oldValue, newValue) -> {
+        filteredData.setPredicate(predicateData -> {
+            if (newValue == null || newValue.isEmpty()) {
+                return true;
+            }
+            String searchKey = newValue.toLowerCase();
+            return Stream.of(
+                    String.valueOf(predicateData.getId()),
+                    predicateData.getNomEquipement()
+            ).anyMatch(value -> value.toLowerCase().contains(searchKey));
+        });
+    });
+    SortedList<Equipement> sortedData = new SortedList<>(filteredData);   
+    equipementTable.comparatorProperty().bind(sortedData.comparatorProperty());
+    equipementTable.setItems(sortedData);
+}*/
+
 }
+
