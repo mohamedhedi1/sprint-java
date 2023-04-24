@@ -6,6 +6,7 @@
 package gui;
 
 import entities.Serie;
+import entities.client;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -40,6 +41,7 @@ import javafx.scene.layout.TilePane;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javax.mail.MessagingException;
+import services.ClientCRUD;
 import services.MailSender;
 import services.SerieCRUD;
 import tools.MyConnection;
@@ -192,8 +194,14 @@ public class AjouterSerieController implements Initializable {
         SerieCRUD pcd = new SerieCRUD();
         pcd.ajouter(t);
         //mail sender 
-                 try {
-    MailSender.sendEmail("mohamedelhedi.hamdi@esprit.tn", "Une nouvelle serie a été ajouté ", ""+t.getTitreSerie()+" est ajouté. ");
+                     try {
+            List<client> l =  ClientCRUD.getList();
+            for(client c : l)
+            {
+             MailSender.sendEmail(c.getEmail(), "Une nouvelle serie a été ajouté ", "Bonjour "+c.getPrenom()+" "+c.getNom()+"\n la serie"+t.getTitreSerie()+" est ajouté à notre equipements \n Consultez notre application et restez en bonne santé. ");
+            }
+            
+   
 } catch (MessagingException e) {
     e.printStackTrace();
 }

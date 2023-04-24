@@ -7,6 +7,7 @@ package entities;
 
 import java.io.File;
 import java.time.LocalDate;
+import java.util.logging.Logger;
 
 /**
  *
@@ -24,7 +25,15 @@ public class client {
    // private  photo;
     private File photo;
 
+    public client(String nom, String prenom, String email) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+    }
+    
 
+    
+    
     public client() {
     }
 

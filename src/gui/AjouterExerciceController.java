@@ -6,6 +6,7 @@
 package gui;
 
 import entities.Exercice;
+import entities.client;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -18,6 +19,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.ResourceBundle;
@@ -35,6 +37,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javax.mail.MessagingException;
+import services.ClientCRUD;
 import services.ExerciceCRUD;
 import services.MailSender;
 import tools.MyConnection;
@@ -100,7 +103,7 @@ public class AjouterExerciceController implements Initializable {
     }
 
     @FXML
-    private void AjouterExercice(ActionEvent event) {
+    private void AjouterExercice(ActionEvent event) throws SQLException {
         
         if(tfNomExercice.getText().isEmpty())
         {
@@ -189,8 +192,14 @@ int resultat = maMap.get(cb_equipement.getValue());
             alertType.show();
             
             //mail sender 
-                     try {
-    MailSender.sendEmail("mohamedelhedi.hamdi@esprit.tn", "Un nouveau exercice a été ajouté ", ""+t.getNomExercice()+" est ajouté. ");
+         try {
+            List<client> l =  ClientCRUD.getList();
+            for(client c : l)
+            {
+             MailSender.sendEmail(c.getEmail(), "Un nouveau exrcice a été ajouté ", "Bonjour "+c.getPrenom()+" "+c.getNom()+"\n l'equipement"+t.getNomExercice()+" est ajouté à notre exercices \n Consultez notre application et restez en bonne santé. ");
+            }
+            
+   
 } catch (MessagingException e) {
     e.printStackTrace();
 }

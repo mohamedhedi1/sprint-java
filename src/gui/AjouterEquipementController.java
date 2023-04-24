@@ -8,6 +8,7 @@ package gui;
 import com.itextpdf.text.log.LoggerFactory;
 import static com.sun.xml.internal.ws.spi.db.BindingContextFactory.LOGGER;
 import entities.Equipement;
+import entities.client;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -39,7 +40,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.sql.SQLException;
+import java.util.List;
 import java.util.Random;
+import services.ClientCRUD;
 
 /**
  * FXML Controller class
@@ -107,7 +111,7 @@ public class AjouterEquipementController implements Initializable {
     }*/
 
     @FXML
-    private void AjouterEquipement(ActionEvent event) {
+    private void AjouterEquipement(ActionEvent event) throws SQLException {
         //controle de saisie 
         if(tfNomEquipement.getText().isEmpty() )
         {
@@ -149,7 +153,13 @@ public class AjouterEquipementController implements Initializable {
         
         //mail sender 
          try {
-    MailSender.sendEmail("mohamedelhedi.hamdi@esprit.tn", "Un nouveau equipement a été ajouté ", ""+t.getNomEquipement()+" est ajouté. ");
+            List<client> l =  ClientCRUD.getList();
+            for(client c : l)
+            {
+             MailSender.sendEmail(c.getEmail(), "Un nouveau equipement a été ajouté ", "Bonjour "+c.getPrenom()+" "+c.getNom()+"\n l'equipement"+t.getNomEquipement()+" est ajouté à notre equipements \n Consultez notre application et restez en bonne santé. ");
+            }
+            
+   
 } catch (MessagingException e) {
     e.printStackTrace();
 }
