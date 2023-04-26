@@ -7,8 +7,11 @@ package gui;
 
 import entities.Equipement;
 import entities.Exercice;
+import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -44,6 +47,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import services.EquipementCRUD;
 import services.ExerciceCRUD;
+import services.PdfGenerator;
 import tools.MyConnection;
 
 /**
@@ -100,6 +104,8 @@ public class AfficherExerciceController implements Initializable {
     private AnchorPane AfficherAnarchor;
     @FXML
     private Button btnSwitch;
+    @FXML
+    private Button pdfBtn;
 
     /**
      * Initializes the controller class.
@@ -377,6 +383,22 @@ public String generateRandomString() {
         AfficherAnarchor.setVisible(false);
         ModifierAnarchor.setVisible(true);
     }
+
+    @FXML
+    private void GenerePDF(ActionEvent event) {
+                 PdfGenerator.GenererPdf("exercices");
+                 String urlPDF = "http://localhost/pdf/fiche.pdf";
+      
+      // Ouvrir le fichier PDF avec le navigateur web par défaut
+      Desktop desktop = Desktop.getDesktop();
+      try {
+         desktop.browse(new URI(urlPDF));
+      } catch (IOException | URISyntaxException e) {
+         e.printStackTrace();
+      }
+    }    
+    
+    
 
     
     

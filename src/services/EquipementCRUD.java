@@ -117,4 +117,7 @@ public class EquipementCRUD implements EntityCRUD<Equipement> {
         
     }
     
+    
+    
+    
 }

@@ -18,6 +18,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -320,49 +322,17 @@ public String generateRandomString() {
     
     @FXML
 private void GenerePDF(ActionEvent event) throws PrinterException {
-    // Créer un nouveau document PDF
-    //Document document = new Document();
     
-    //try {
-       /* // Créer un écrivain PDF qui écrira le document dans un fichier temporaire
-        PdfWriter.getInstance(document, new FileOutputStream("C:\\Users\\Mohamed\\Downloads\\exemple12.pdf"));
-        
-        // Ouvrir le document pour écrire du contenu
-        document.open();
-        
-        // Ajouter du texte au document
-        document.add(new Paragraph("Bonjour"));
-        
-        // Fermer le document
-        document.close();*/
-        
-       
-        // Créer un objet Desktop pour ouvrir le fichier PDF dans le lecteur PDF par défaut de l'utilisateur
-        
          PdfGenerator.GenererPdf("equipements");
-    String cheminFichierPDF = "C:\\Users\\Mohamed\\Downloads\\exemple12.pdf";
-
-      // Vérifier que le fichier existe
-      File fichierPDF = new File(cheminFichierPDF);
-      if (!fichierPDF.exists()) {
-         System.out.println("Le fichier PDF n'existe pas.");
-         return;
-      }
-
-      // Vérifier que le Desktop est supporté par la plateforme
-      if (!Desktop.isDesktopSupported()) {
-         System.out.println("Desktop n'est pas supporté.");
-         return;
-      }
-
+    String urlPDF = "http://localhost/pdf/fiche.pdf";
+      
       // Ouvrir le fichier PDF avec le navigateur web par défaut
       Desktop desktop = Desktop.getDesktop();
       try {
-         desktop.browse(fichierPDF.toURI());
-      } catch (IOException e) {
+         desktop.browse(new URI(urlPDF));
+      } catch (IOException | URISyntaxException e) {
          e.printStackTrace();
       }
-
 }
 
     

@@ -5,7 +5,6 @@
  */
 package services;
 
-import entities.Equipement;
 import entities.Exercice;
 import interfaces.EntityCRUD;
 import java.sql.ResultSet;
@@ -78,4 +77,33 @@ public class ExerciceCRUD implements EntityCRUD<Exercice> {
         st.executeUpdate(query);   
     }
     
-}
+    
+    public List<Exercice> getList() throws SQLException {
+        List<Exercice> myList = new ArrayList<>();
+         try {
+            String requete = "SELECT * FROM exercice";
+            Statement st = MyConnection.getInstance().getCnx()
+                    .createStatement();
+            ResultSet rs = st.executeQuery(requete);
+            while(rs.next()){
+                Exercice p = new  Exercice();
+                p.setId(rs.getInt(1));
+                p.setNomExercice(rs.getString("nom_exercice"));
+                p.setImageExercice("C:/xampp/htdocs/"+rs.getString("image_exercice"));
+                p.setDuration(rs.getInt("duration"));
+                p.setRepetation(rs.getInt("repetation"));
+                p.setInstruction(rs.getString("instruction"));
+                myList.add(p);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return myList;
+        
+    }
+       
+    }
+    
+       
+    
+

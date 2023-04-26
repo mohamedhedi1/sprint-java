@@ -43,8 +43,9 @@
                   <TableColumn fx:id="instruction_col" prefWidth="201.0" text="instruction" />
               </columns>
             </TableView>
-            <Button fx:id="btnSwitch" layoutX="210.0" layoutY="500.0" mnemonicParsing="false" onAction="#switchAnarchor" prefHeight="26.0" prefWidth="187.0" styleClass="update-btn" stylesheets="@dashboardDesign.css" text="Modifier" />
+            <Button fx:id="btnSwitch" layoutX="152.0" layoutY="500.0" mnemonicParsing="false" onAction="#switchAnarchor" prefHeight="26.0" prefWidth="187.0" styleClass="update-btn" stylesheets="@dashboardDesign.css" text="Modifier" />
             <Button fx:id="btnSupprimer" layoutX="544.0" layoutY="500.0" mnemonicParsing="false" onAction="#Supprimer" prefHeight="26.0" prefWidth="172.0" styleClass="delete-btn" stylesheets="@dashboardDesign.css" text="Supprimer" />
+            <Button fx:id="pdfBtn" layoutX="363.0" layoutY="498.0" mnemonicParsing="false" onAction="#GenerePDF" prefHeight="31.0" prefWidth="149.0" styleClass="clear-btn" stylesheets="@dashboardDesign.css" text="PDF" />
          </children>
       </AnchorPane>
    </children>
