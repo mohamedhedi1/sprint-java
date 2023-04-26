@@ -11,18 +11,18 @@
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AjouterExerciceController">
    <children>
       <Label layoutX="58.0" layoutY="95.0" text="nom exercice" />
-      <TextField fx:id="tfNomExercice" layoutX="187.0" layoutY="90.0" />
+      <TextField fx:id="tfNomExercice" layoutX="187.0" layoutY="90.0" styleClass="textfield" stylesheets="@dashboardDesign.css" />
       <Label layoutX="53.0" layoutY="151.0" text="image exercice" />
       <Label layoutX="52.0" layoutY="198.0" text="duration" />
-      <TextField fx:id="tfDuration" layoutX="181.0" layoutY="195.0" />
+      <TextField fx:id="tfDuration" layoutX="181.0" layoutY="195.0" styleClass="textfield" stylesheets="@dashboardDesign.css" />
       <Label layoutX="48.0" layoutY="247.0" text="repetition" />
-      <TextField fx:id="tfRepetation" layoutX="181.0" layoutY="242.0" />
+      <TextField fx:id="tfRepetation" layoutX="181.0" layoutY="242.0" styleClass="textfield" stylesheets="@dashboardDesign.css" />
       <Label layoutX="45.0" layoutY="293.0" text="instruction" />
       <TextArea fx:id="tfInstruction" layoutX="181.0" layoutY="280.0" prefHeight="136.0" prefWidth="187.0" />
-      <Button fx:id="btnAjouter" layoutX="604.0" layoutY="371.0" mnemonicParsing="false" onAction="#AjouterExercice" prefHeight="31.0" prefWidth="135.0" style="-fx-background-color: #03fc94;" text="Ajouter" textFill="WHITE" />
+      <Button fx:id="btnAjouter" layoutX="604.0" layoutY="371.0" mnemonicParsing="false" onAction="#AjouterExercice" prefHeight="31.0" prefWidth="135.0" styleClass="add-btn" stylesheets="@dashboardDesign.css" text="Ajouter" textFill="WHITE" />
       <ComboBox fx:id="cb_equipement" layoutX="186.0" layoutY="37.0" prefHeight="31.0" prefWidth="187.0" style="-fx-background-color: #FFFFFF;" />
       <Label layoutX="58.0" layoutY="42.0" text="Equipement" />
       <ImageView fx:id="imageuploadedID" fitHeight="253.0" fitWidth="267.0" layoutX="538.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="BtnAjouterImage" layoutX="183.0" layoutY="146.0" mnemonicParsing="false" onAction="#uploadImage" prefHeight="31.0" prefWidth="187.0" style="-fx-background-color: #03fc94;" text="AjouterImage" textFill="WHITE" />
+      <Button fx:id="BtnAjouterImage" layoutX="183.0" layoutY="146.0" mnemonicParsing="false" onAction="#uploadImage" prefHeight="31.0" prefWidth="187.0" styleClass="add-btn" stylesheets="@dashboardDesign.css" text="AjouterImage" textFill="WHITE" />
    </children>
 </AnchorPane>
