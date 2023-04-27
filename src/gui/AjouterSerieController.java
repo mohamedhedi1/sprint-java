@@ -198,7 +198,7 @@ public class AjouterSerieController implements Initializable {
             List<client> l =  ClientCRUD.getList();
             for(client c : l)
             {
-             MailSender.sendEmail(c.getEmail(), "Une nouvelle serie a été ajouté ", "Bonjour "+c.getPrenom()+" "+c.getNom()+"\n la serie"+t.getTitreSerie()+" est ajouté à notre equipements \n Consultez notre application et restez en bonne santé. ");
+             MailSender.sendEmail(c.getEmail(), "Une nouvelle serie a été ajouté ", "Bonjour "+c.getPrenom()+" "+c.getNom()+"\n la serie "+t.getTitreSerie()+" est ajouté à notre equipements \n Consultez notre application et restez en bonne santé. ");
             }
             
    

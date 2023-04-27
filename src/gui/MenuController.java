@@ -80,6 +80,21 @@ public class MenuController implements Initializable {
     private void AjouterSerie(ActionEvent event) {
         loadPage("AjouterSerie");
     }
+
+    @FXML
+    private void AffEqFront(ActionEvent event) {
+        loadPage("EquipementFront");
+    }
+
+    @FXML
+    private void AffExFront(ActionEvent event) {
+        loadPage("ExerciceFront");
+    }
+
+    @FXML
+    private void AffSerieFront(ActionEvent event) {
+        loadPage("SerieFront");
+    }
  
     
 }

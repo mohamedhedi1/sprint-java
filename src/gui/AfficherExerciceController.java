@@ -25,6 +25,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -106,6 +108,8 @@ public class AfficherExerciceController implements Initializable {
     private Button btnSwitch;
     @FXML
     private Button pdfBtn;
+    @FXML
+    private TextField recherchetf;
 
     /**
      * Initializes the controller class.
@@ -119,6 +123,24 @@ public class AfficherExerciceController implements Initializable {
         } catch (SQLException ex) {
             
         }
+         // Associer les données à la table
+        ExerciceCRUD eq = new ExerciceCRUD();
+        try {
+            ObservableList<Exercice>  x =eq.afficher();
+              ExerciceTable.setItems(x);
+                 recherchetf.textProperty().addListener((observable, oldValue, newValue) -> {
+        // utiliser la méthode filter() de l'objet categories pour filtrer les résultats
+        ExerciceTable.setItems(x.filtered(ex -> {
+            String lowerCaseFilter = newValue.toLowerCase();
+            return ex.getNomExercice().toLowerCase().contains(lowerCaseFilter) || ex.getInstruction().toLowerCase().contains(lowerCaseFilter)
+                    || Integer.toString(ex.getRepetation()).toLowerCase().contains(lowerCaseFilter) || Integer.toString(ex.getDuration()).toLowerCase().contains(lowerCaseFilter)
+                ;
+        }));
+    });
+        } catch (SQLException ex) {
+            Logger.getLogger(AfficherEquipementController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
     
     public void fillcomboExercice() {

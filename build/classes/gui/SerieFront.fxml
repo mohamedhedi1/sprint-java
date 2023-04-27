@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="895.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="gui.SerieFrontController">
+   <children>
+      <ImageView fitHeight="268.0" fitWidth="911.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/banner-bg.jpg" />
+         </image>
+      </ImageView>
+      <ListView fx:id="listEquipementF" layoutY="210.0" orientation="HORIZONTAL" prefHeight="400.0" prefWidth="911.0" style="-fx-background-color: #808080;" />
+   </children>
+</AnchorPane>

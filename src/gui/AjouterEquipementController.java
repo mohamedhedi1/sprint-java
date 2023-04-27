@@ -156,7 +156,7 @@ public class AjouterEquipementController implements Initializable {
             List<client> l =  ClientCRUD.getList();
             for(client c : l)
             {
-             MailSender.sendEmail(c.getEmail(), "Un nouveau equipement a été ajouté ", "Bonjour "+c.getPrenom()+" "+c.getNom()+"\n l'equipement"+t.getNomEquipement()+" est ajouté à notre equipements \n Consultez notre application et restez en bonne santé. ");
+             MailSender.sendEmail(c.getEmail(), "Un nouveau equipement a été ajouté ", "Bonjour "+c.getPrenom()+" "+c.getNom()+"\n l'equipement "+t.getNomEquipement()+" est ajouté à notre equipements \n Consultez notre application et restez en bonne santé. ");
             }
             
    

@@ -120,6 +120,24 @@ public class AfficherEquipementController implements Initializable {
         } catch (SQLException ex) {
             
         }
+        // Associer les données à la table
+        EquipementCRUD eq = new EquipementCRUD();
+        try {
+            ObservableList<Equipement>  x =eq.afficher();
+              equipementTable.setItems(x);
+                 recherchetf.textProperty().addListener((observable, oldValue, newValue) -> {
+        // utiliser la méthode filter() de l'objet categories pour filtrer les résultats
+        equipementTable.setItems(x.filtered(equipement -> {
+            String lowerCaseFilter = newValue.toLowerCase();
+            return equipement.getNomEquipement().toLowerCase().contains(lowerCaseFilter)
+                ;
+        }));
+    });
+        } catch (SQLException ex) {
+            Logger.getLogger(AfficherEquipementController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+              
         
     }   
     
@@ -341,7 +359,8 @@ private void GenerePDF(ActionEvent event) throws PrinterException {
         AfficherAnarchor.setVisible(false);
         ModifierAnarchor.setVisible(true);
     }
-/*
+
+  /*  
 public void RechercheAV() throws SQLException {
     // Wrap the ObservableList in a FilteredList (initially display all data).
     FilteredList<Equipement> filteredData = new FilteredList<>(EquipementListData(), e -> true);
@@ -361,6 +380,8 @@ public void RechercheAV() throws SQLException {
     equipementTable.comparatorProperty().bind(sortedData.comparatorProperty());
     equipementTable.setItems(sortedData);
 }*/
+    
+    
 
 }
 

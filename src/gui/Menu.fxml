@@ -42,6 +42,9 @@
                                                 <Font name="Times New Roman Bold" size="36.0" />
                                             </font>
                                         </Label>
+                              <Button layoutX="16.0" layoutY="434.0" mnemonicParsing="false" onAction="#AffEqFront" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Equipements" />
+                              <Button layoutX="16.0" layoutY="469.0" mnemonicParsing="false" onAction="#AffExFront" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Exercices" />
+                              <Button layoutX="16.0" layoutY="504.0" mnemonicParsing="false" onAction="#AffSerieFront" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Series" />
                                     </children>
                                 </AnchorPane>
                             </children>

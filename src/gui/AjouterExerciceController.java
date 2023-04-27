@@ -196,7 +196,7 @@ int resultat = maMap.get(cb_equipement.getValue());
             List<client> l =  ClientCRUD.getList();
             for(client c : l)
             {
-             MailSender.sendEmail(c.getEmail(), "Un nouveau exrcice a été ajouté ", "Bonjour "+c.getPrenom()+" "+c.getNom()+"\n l'equipement"+t.getNomExercice()+" est ajouté à notre exercices \n Consultez notre application et restez en bonne santé. ");
+             MailSender.sendEmail(c.getEmail(), "Un nouveau exrcice a été ajouté ", "Bonjour "+c.getPrenom()+" "+c.getNom()+"\n l'exercice "+t.getNomExercice()+" est ajouté à notre exercices \n Consultez notre application et restez en bonne santé. ");
             }
             
    

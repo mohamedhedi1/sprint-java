@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane id="AnchorPane" prefHeight="509.0" prefWidth="936.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AfficherSerieController">
@@ -16,5 +17,6 @@
         </columns>
       </TableView>
       <Button fx:id="btnSupprimer" layoutX="500.0" layoutY="440.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="28.0" prefWidth="180.0" styleClass="delete-btn" stylesheets="@dashboardDesign.css" text="Supprimer" />
+      <TextField fx:id="recherchetf" layoutX="669.0" layoutY="37.0" />
    </children>
 </AnchorPane>

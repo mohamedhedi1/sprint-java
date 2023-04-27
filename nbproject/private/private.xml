@@ -3,20 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Mohamed/Desktop/projet%20java/sprint-java/src/services/EquipementCRUD.java</file>
+            <file>file:/C:/Users/Mohamed/Desktop/projet%20java/sprint-java/src/tests/OuvrirPDF.java</file>
+            <file>file:/C:/Users/Mohamed/Desktop/projet%20java/sprint-java/src/gui/AfficherSerieController.java</file>
             <file>file:/C:/Users/Mohamed/Desktop/projet%20java/sprint-java/src/gui/AfficherEquipementController.java</file>
+            <file>file:/C:/Users/Mohamed/Desktop/projet%20java/sprint-java/src/entities/Exercice.java</file>
             <file>file:/C:/Users/Mohamed/Desktop/projet%20java/sprint-java/src/entities/Serie.java</file>
+            <file>file:/C:/Users/Mohamed/Desktop/projet%20java/sprint-java/src/services/ClientCRUD.java</file>
             <file>file:/C:/Users/Mohamed/Desktop/projet%20java/sprint-java/src/gui/AfficherExerciceController.java</file>
+            <file>file:/C:/Users/Mohamed/Desktop/projet%20java/sprint-java/src/services/PdfGenerator.java</file>
+            <file>file:/C:/Users/Mohamed/Desktop/projet%20java/sprint-java/src/image/breadcrumb-bg.jpg</file>
             <file>file:/C:/Users/Mohamed/Desktop/projet%20java/sprint-java/src/gui/AjouterExerciceController.java</file>
             <file>file:/C:/Users/Mohamed/Desktop/projet%20java/sprint-java/src/services/SerieCRUD.java</file>
-            <file>file:/C:/Users/Mohamed/Desktop/projet%20java/sprint-java/src/services/ExerciceCRUD.java</file>
-            <file>file:/C:/Users/Mohamed/Desktop/projet%20java/sprint-java/src/services/PDFViewerController.java</file>
-            <file>file:/C:/Users/Mohamed/Desktop/projet%20java/sprint-java/src/gui/AfficherSerieController.java</file>
-            <file>file:/C:/Users/Mohamed/Desktop/projet%20java/sprint-java/src/entities/Exercice.java</file>
-            <file>file:/C:/Users/Mohamed/Desktop/projet%20java/sprint-java/src/services/ClientCRUD.java</file>
-            <file>file:/C:/Users/Mohamed/Desktop/projet%20java/sprint-java/src/gui/AjouterEquipementController.java</file>
-            <file>file:/C:/Users/Mohamed/Desktop/projet%20java/sprint-java/src/services/PdfGenerator.java</file>
-            <file>file:/C:/Users/Mohamed/Desktop/projet%20java/sprint-java/src/gui/AjouterSerieController.java</file>
             <file>file:/C:/Users/Mohamed/Desktop/projet%20java/sprint-java/src/entities/client.java</file>
         </group>
     </open-files>

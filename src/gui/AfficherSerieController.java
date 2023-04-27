@@ -12,6 +12,8 @@ import java.io.File;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,15 +24,18 @@ import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+
+import services.SerieCRUD;import javafx.scene.image.ImageView;
 import services.EquipementCRUD;
 import services.ExerciceCRUD;
-import services.SerieCRUD;
 
 /**
- * FXML Controller class
+ * FXML Controller classimport javafx.scene.image.ImageView;
+import services.EquipementCRUD;
+import services.ExerciceCRUD;
  *
  * @author Mohamed
  */
@@ -48,6 +53,8 @@ public class AfficherSerieController implements Initializable {
     private Button btnSupprimer;
     @FXML
     private TableColumn<Serie, String> col_image;
+    @FXML
+    private TextField recherchetf;
 
     /**
      * Initializes the controller class.
@@ -59,6 +66,22 @@ public class AfficherSerieController implements Initializable {
             SerieShowListData();
         } catch (SQLException ex) {
             
+        }
+          // Associer les données à la table
+        SerieCRUD eq = new SerieCRUD();
+        try {
+            ObservableList<Serie>  x =eq.afficher();
+              serieTable.setItems(x);
+                 recherchetf.textProperty().addListener((observable, oldValue, newValue) -> {
+        // utiliser la méthode filter() de l'objet categories pour filtrer les résultats
+        serieTable.setItems(x.filtered(ex -> {
+            String lowerCaseFilter = newValue.toLowerCase();
+            return ex.getImageSerie().toLowerCase().contains(lowerCaseFilter) || ex.getTitreSerie().toLowerCase().contains(lowerCaseFilter) 
+                ;
+        }));
+    });
+        } catch (SQLException ex) {
+            Logger.getLogger(AfficherEquipementController.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }   
