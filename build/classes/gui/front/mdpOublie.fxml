@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="332.0" prefWidth="432.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.front.MdpOublieController">
+   <children>
+      <ImageView fitHeight="339.0" fitWidth="456.0" layoutX="-5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/page2-img2.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="35.0" layoutY="69.0" prefHeight="23.0" prefWidth="403.0" styleClass="shadow" stylesheets="@../sportconnectback.css" text="entrez votre adresse mail de récupération" textFill="WHITE">
+         <font>
+            <Font name="Lucida Sans Demibold Roman" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="envoyer" layoutX="150.0" layoutY="222.0" mnemonicParsing="false" onAction="#envoyer" styleClass="exel-btn" stylesheets="@../sportconnectback.css" text="envoyer" />
+      <TextField fx:id="email" layoutX="150.0" layoutY="144.0" />
+      <Button fx:id="annuler" layoutX="236.0" layoutY="223.0" mnemonicParsing="false" onAction="#annuler" prefHeight="25.0" prefWidth="57.0" styleClass="card" stylesheets="@../sportconnectback.css" text="annuler" textFill="WHITE" />
+      <ImageView fitHeight="103.0" fitWidth="136.0" layoutX="-16.0" layoutY="-11.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/logo1.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
