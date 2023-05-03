@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sportconnectfx.gui.DetailCommentaireController">
+    <TableView fx:id="tableView" layoutX="19.0" layoutY="27.0" prefHeight="235.0" prefWidth="570.0" stylesheets="@template.css">
+    <columns>
+        <TableColumn fx:id="idColumn" text="ID" />
+        <TableColumn fx:id="pseudoColumn" prefWidth="101.99996948242188" text="Pseudo" />
+        <TableColumn fx:id="contenuColumn" prefWidth="170.3333740234375" text="Contenu" />
+        <TableColumn fx:id="blogIdColumn" prefWidth="91.0" text="Blog ID" />
+    </columns>
+    
+</TableView>
+   <Button fx:id="suppcomm" layoutX="365.0" layoutY="284.0" mnemonicParsing="false" onAction="#supprimercommentaire" styleClass="delete-btn" stylesheets="@template.css" text="Supprimer Commentaire" textFill="#ef0b0b" textOverrun="WORD_ELLIPSIS" wrapText="true">
+      <font>
+         <Font name="Berlin Sans FB" size="16.0" />
+      </font>
+   </Button>
+   <ButtonBar layoutX="120.0" layoutY="304.0" prefHeight="40.0" prefWidth="200.0" />
+   <Button fx:id="btupdate" layoutX="252.0" layoutY="286.0" mnemonicParsing="false" onAction="#BtnUpdate" styleClass="clear-btn" stylesheets="@template.css" text="Update " textFill="#2e9a74">
+      <font>
+         <Font size="16.0" />
+      </font>
+   </Button>
+   <Button fx:id="tfajou" layoutX="31.0" layoutY="286.0" mnemonicParsing="false" onAction="#goajoutcomm" styleClass="add-btn" stylesheets="@template.css" text="Ajouter un commentaire " textFill="#0856dd">
+      <font>
+         <Font name="System Bold" size="16.0" />
+      </font>
+   </Button>
+   <Button fx:id="tfretour" layoutX="262.0" layoutY="344.0" mnemonicParsing="false" onAction="#onretour" text="retour" textFill="#e07912" />
+
+    
+</AnchorPane>

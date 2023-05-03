@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1106.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sportconnectfx.gui.AceuilController"> 
+    <children>
+        <AnchorPane fx:id="main_form" prefHeight="200.0" prefWidth="200.0">
+            <children>
+                <BorderPane layoutX="233.0" layoutY="200.0" prefHeight="600.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <top>
+                        <AnchorPane prefHeight="45.0" prefWidth="200.0" styleClass="top-form" stylesheets="@template.css" BorderPane.alignment="CENTER">
+                            <children>
+                                <AnchorPane layoutX="202.0" layoutY="-86.0" prefHeight="35.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <Label layoutX="23.0" layoutY="14.0" text="SportConnect : Gestion de Blog.">
+                                            <font>
+                                                <Font name="Times New Roman" size="15.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </AnchorPane>
+                    </top>
+                    <left>
+                        <AnchorPane prefHeight="555.0" prefWidth="211.0" BorderPane.alignment="CENTER" />
+                    </left>
+               <center>
+                  <AnchorPane prefHeight="493.0" prefWidth="818.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="-144.0" layoutY="27.0" prefHeight="534.0" prefWidth="872.0" stylesheets="@template.css">
+                           <styleClass>
+                              <String fx:value="white-bg" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                           <children>
+                              <Button fx:id="btnblog" layoutX="555.0" layoutY="205.0" mnemonicParsing="false" onAction="#goblog" prefHeight="50.0" prefWidth="147.0" styleClass="add-btn" text=" Admin" />
+                              <Button fx:id="btncommentaire" layoutX="555.0" layoutY="369.0" mnemonicParsing="false" onAction="#gocomm" prefHeight="50.0" prefWidth="147.0" styleClass="add-btn" stylesheets="@template.css" text="Client " />
+                              <ImageView fitHeight="538.0" fitWidth="420.0" layoutY="1.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@images/Blog-intro.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="513.0" layoutY="57.0" text="Gestion de Blog" textFill="#37b2e2">
+                                 <font>
+                                    <Font name="System Bold" size="31.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+                    </BorderPane>
+                </children>    
+        </AnchorPane>
+    </children> 
+                    
+</StackPane>

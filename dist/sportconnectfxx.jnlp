@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="sportconnectfxx.jnlp">
+  <information>
+    <title>sportconnectfxx</title>
+    <vendor>manar</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="lib\activation-1.1.jar" size="62983" download="eager" />
+    <jar href="lib\joda-time-2.3.jar" size="581571" download="eager" />
+    <jar href="lib\mail-1.4.7.jar" size="521157" download="eager" />
+    <jar href="lib\mysql-connector-java-5.1.23-bin.jar" size="834126" download="eager" />
+    <jar href="lib\mysql-connector-java-5.1.23.jar" size="843090" download="eager" />
+    <jar href="lib\rss-2.0.jar" size="53194" download="eager" />
+    <jar href="lib\twilio-6.6.10-jar-with-dependencies.jar" size="7604375" download="eager" />
+    <jar href="sportconnectfxx.jar" size="227305" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="sportconnectfxx" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="sportconnectfx.gui.HomeWindow"  name="sportconnectfxx" />
+  <update check="always"/>
+</jnlp>
