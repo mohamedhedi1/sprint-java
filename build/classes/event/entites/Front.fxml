@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="520.0" prefWidth="890.0" stylesheets="@Back.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlleurs.MatchUserController">
+   <children>
+      <ImageView fitHeight="520.0" fitWidth="938.0" layoutY="-1.0">
+         <image>
+            <Image url="@../../../../../../Desktop/tunisport/src/Images/whiteBgBig.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="-2.0" layoutY="-7.0" prefHeight="101.0" prefWidth="945.0" styleClass="black-bg" stylesheets="@dashboardDesign.css">
+         <children>
+            <ImageView fitHeight="118.0" fitWidth="137.0" layoutX="25.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/big_0744e95099e3049f.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="253.0" layoutY="49.0" mnemonicParsing="false" styleClass="navbar-btn" stylesheets="@dashboardDesign.css" text="HOME" />
+            <Button layoutX="322.0" layoutY="49.0" mnemonicParsing="false" styleClass="navbar-btn" stylesheets="@../../../../../../Desktop/tunisport/src/Views/dashboardDesign.css" text="ABOUT" />
+            <Button layoutX="395.0" layoutY="49.0" mnemonicParsing="false" styleClass="navbar-btn" stylesheets="@../../../../../../Desktop/tunisport/src/Views/dashboardDesign.css" text="NUTRITIF" />
+            <Button layoutX="473.0" layoutY="49.0" mnemonicParsing="false" styleClass="navbar-btn" stylesheets="@../../../../../../Desktop/tunisport/src/Views/dashboardDesign.css" text="BLOG" />
+            <Circle layoutX="837.0" layoutY="64.0" radius="10.0" stroke="WHITE" strokeType="INSIDE" />
+            <Circle layoutX="868.0" layoutY="64.0" radius="10.0" stroke="WHITE" strokeType="INSIDE" />
+            <Circle layoutX="901.0" layoutY="64.0" radius="10.0" stroke="WHITE" strokeType="INSIDE" />
+            <Button layoutX="828.0" layoutY="7.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="111.0" styleClass="sign-btn" stylesheets="@../../../../../../Desktop/tunisport/src/Views/dashboardDesign.css" text="SIGNUP/LOGIN">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="8.0" fitWidth="8.0" layoutX="314.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="14.0" fitWidth="14.0" layoutX="830.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-f-de-facebook-24_1.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="14.0" fitWidth="14.0" layoutX="861.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-instagram-64.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="14.0" fitWidth="14.0" layoutX="894.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-twitter-50_1.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="528.0" layoutY="49.0" mnemonicParsing="false" styleClass="navbar-btn" stylesheets="@../../../../../../Desktop/tunisport/src/Views/dashboardDesign.css" text="COACH" />
+            <Button fx:id="admin" layoutX="595.0" layoutY="49.0" mnemonicParsing="false" onAction="#Admin" styleClass="navbar-btn" stylesheets="@../../../../../../Desktop/tunisport/src/Views/dashboardDesign.css" text="ADMIN" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="1.0" layoutY="128.0" prefHeight="121.0" prefWidth="938.0">
+         <children>
+            <ImageView fitHeight="103.0" fitWidth="537.0" layoutX="189.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/Sports-Connect_Standard-PBSS.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="reservation_form" layoutY="184.0" prefHeight="412.0" prefWidth="939.0" stylesheets="@stylesheet.css">
+         <children>
+            <ImageView fitHeight="43.0" fitWidth="554.0" layoutX="205.0" layoutY="124.0">
+               <image>
+                  <Image url="@images/blue-bg.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="227.0" layoutY="137.0" text="Sport Connect Team" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnEvent" layoutX="507.0" layoutY="128.0" mnemonicParsing="false" onAction="#evenement" prefHeight="35.0" prefWidth="252.0" styleClass="nav-btn" stylesheets="@Back.css" text="PARTICIPER A UN EVENEMENT">
+               <graphic>
+                  <FontAwesomeIcon fill="#eee1e1" glyphName="TROPHY" />
+               </graphic>
+            </Button>
+            <AnchorPane layoutX="200.0" layoutY="192.0" prefHeight="200.0" prefWidth="554.0" styleClass="p" stylesheets="@Back.css">
+               <children>
+                  <Text layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sport Connect est une application de bureau essentielle pour les sportifs de tous niveaux qui cherchent à améliorer leurs performances. Avec son interface facile à utiliser, ses programmes personnalisés et son suivi régulier des progrès, les utilisateurs peuvent atteindre leurs objectifs de condition physique plus rapidement et plus efficacement que jamais." textAlignment="CENTER" wrappingWidth="536.9999961555004">
+                     <font>
+                        <Font name="Sitka Heading" size="14.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="43.0" fitWidth="554.0" layoutX="4.0" layoutY="120.0">
+                     <image>
+                        <Image url="@images/blue-bg.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="26.0" layoutY="133.0" text="Contact" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="211.0" layoutY="133.0" text="+216 99 801 569" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="422.0" layoutY="133.0" text="pidev96@gmail.com" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="add_reservation_form" layoutX="1.0" layoutY="257.0" prefHeight="263.0" prefWidth="938.0" visible="false">
+         <children>
+            <Label layoutX="552.0" layoutY="84.0" text="Date de la réservation">
+               <font>
+                  <Font name="Berlin Sans FB" size="12.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="dpdate" layoutX="546.0" layoutY="106.0" />
+            <ComboBox fx:id="cbmatch" layoutX="552.0" layoutY="45.0" prefWidth="150.0" styleClass="labbtn" stylesheets="@../../../../../../Desktop/tunisport/src/Views/stylesheet.css" />
+            <ComboBox fx:id="cbuser" layoutX="221.0" layoutY="45.0" prefWidth="150.0" styleClass="labbtn" stylesheets="@../../../../../../Desktop/tunisport/src/Views/stylesheet.css" />
+            <Label layoutX="232.0" layoutY="84.0" text="Nombre de billet">
+               <font>
+                  <Font name="Berlin Sans FB" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="559.0" layoutY="24.0" text="Match associé">
+               <font>
+                  <Font name="Berlin Sans FB" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="234.0" layoutY="24.0" text="Utilisateur">
+               <font>
+                  <Font name="Berlin Sans FB" size="12.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnajouter" layoutX="428.0" layoutY="167.0" mnemonicParsing="false" onAction="#ajouterReservation" styleClass="add-btn" stylesheets="@../../../../../../Desktop/tunisport/src/Views/dashboardDesign.css" text="Enregistrer" />
+            <TextField fx:id="tfnbrbillet" layoutX="222.0" layoutY="106.0" styleClass="labbtn" stylesheets="@../../../../../../Desktop/tunisport/src/Views/stylesheet.css" />
+            <Button fx:id="btnretour" layoutX="852.0" layoutY="18.0" mnemonicParsing="false" onAction="#reserverBillet" styleClass="clear-btn" stylesheets="@../../../../../../Desktop/tunisport/src/Views/dashboardDesign.css" text="Retour" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="reservation_details" layoutX="1.0" layoutY="257.0" prefHeight="263.0" prefWidth="938.0" visible="false">
+         <children>
+            <AnchorPane layoutX="268.0" layoutY="69.0" prefHeight="134.0" prefWidth="402.0" style="-fx-background-radius: 50px;" styleClass="grey-bg" stylesheets="@../../../../../../Desktop/tunisport/src/Views/dashboardDesign.css">
+               <children>
+                  <Label layoutX="22.0" layoutY="25.0" text="Date Réservation" textFill="WHITE">
+                     <font>
+                        <Font name="Berlin Sans FB" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="150.0" layoutY="25.0" text="Nombre de billets" textFill="WHITE">
+                     <font>
+                        <Font name="Berlin Sans FB" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="295.0" layoutY="25.0" text="Prix billet" textFill="WHITE">
+                     <font>
+                        <Font name="Berlin Sans FB" size="14.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="reservationList" layoutY="56.0" onMouseClicked="#ReservationSelect" prefHeight="43.0" prefWidth="402.0" />
+               </children>
+            </AnchorPane>
+            <Label layoutX="362.0" layoutY="23.0" text="Détails de votre réservation" textFill="#b81818">
+               <font>
+                  <Font name="Candara Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="726.0" layoutY="119.0" mnemonicParsing="false" styleClass="pay-btn" stylesheets="@../../../../../../Desktop/tunisport/src/Views/dashboardDesign.css" text="Procéder au paiement" />
+            <Button fx:id="btnupdate" layoutX="76.0" layoutY="118.0" mnemonicParsing="false" onAction="#switchform2" prefHeight="26.0" prefWidth="150.0" styleClass="update-btn" stylesheets="@../../../../../../Desktop/tunisport/src/Views/dashboardDesign.css" text="Modifier réservation" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="update_reservation_form" layoutX="1.0" layoutY="257.0" prefHeight="263.0" prefWidth="938.0" visible="false">
+         <children>
+            <Button fx:id="btnretour1" layoutX="845.0" layoutY="22.0" mnemonicParsing="false" onAction="#switchform2" styleClass="clear-btn" stylesheets="@../../../../../../Desktop/tunisport/src/Views/dashboardDesign.css" text="Retour" />
+            <TextField fx:id="tfnbrbillet1" layoutX="209.0" layoutY="119.0" styleClass="labbtn" stylesheets="@../../../../../../Desktop/tunisport/src/Views/stylesheet.css" />
+            <Button fx:id="btnmodifier" layoutX="428.0" layoutY="167.0" mnemonicParsing="false" onAction="#modifierReservation" styleClass="add-btn" stylesheets="@../../../../../../Desktop/tunisport/src/Views/dashboardDesign.css" text="Enregistrer" />
+            <Label layoutX="211.0" layoutY="35.0" text="Utilisateur">
+               <font>
+                  <Font name="Berlin Sans FB" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="559.0" layoutY="35.0" text="Match associé">
+               <font>
+                  <Font name="Berlin Sans FB" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="209.0" layoutY="98.0" text="Nombre de billet">
+               <font>
+                  <Font name="Berlin Sans FB" size="12.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="cbuser1" layoutX="209.0" layoutY="57.0" prefWidth="150.0" styleClass="labbtn" stylesheets="@../../../../../../Desktop/tunisport/src/Views/stylesheet.css" />
+            <ComboBox fx:id="cbmatch1" layoutX="552.0" layoutY="57.0" prefWidth="150.0" styleClass="labbtn" stylesheets="@../../../../../../Desktop/tunisport/src/Views/stylesheet.css" />
+            <DatePicker fx:id="dpdate1" layoutX="540.0" layoutY="119.0" />
+            <Label layoutX="552.0" layoutY="98.0" text="Date de la réservation">
+               <font>
+                  <Font name="Berlin Sans FB" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfid" layoutX="30.0" layoutY="85.0" visible="false" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="classement_form" layoutX="-1.0" layoutY="254.0" prefHeight="270.0" prefWidth="939.0" visible="false">
+         <children>
+            <TableView fx:id="classement_table" layoutX="70.0" layoutY="75.0" prefHeight="150.0" prefWidth="798.0" styleClass="table-view2" stylesheets="@../../../../../../Desktop/tunisport/src/Views/dashboardDesign.css">
+               <columns>
+                  <TableColumn fx:id="rangCol" text="Rang" />
+                  <TableColumn fx:id="equipeCol" text="Equipe" />
+                  <TableColumn fx:id="mjCol" text="Matchs joués" />
+                  <TableColumn fx:id="victoireCol" text="Victoires" />
+                  <TableColumn fx:id="nulCol" prefWidth="57.60003662109375" text="Nuls" />
+                  <TableColumn fx:id="defaiteCol" prefWidth="85.60003662109375" text="Défaites" />
+                  <TableColumn fx:id="bmCol" prefWidth="109.5999755859375" text="Buts marqués" />
+                  <TableColumn fx:id="beCol" prefWidth="91.199951171875" text="Buts encaissés" />
+                  <TableColumn fx:id="dbCol" prefWidth="57.5999755859375" text="Diff. Buts" />
+                  <TableColumn fx:id="pointsCol" text="Points" />
+               </columns>
+            </TableView>
+            <Label layoutX="553.0" layoutY="27.0" text="2022/2023" textFill="#b91717">
+               <font>
+                  <Font name="Candara Bold" size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnretour1" layoutX="808.0" layoutY="29.0" mnemonicParsing="false" onAction="#switchform3" styleClass="clear-btn" stylesheets="@../../../../../../Desktop/tunisport/src/Views/dashboardDesign.css" text="Retour" />
+            <ImageView fitHeight="59.0" fitWidth="111.0" layoutX="414.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../Desktop/tunisport/src/Images/Ligue%201%20Professionnelle.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="273.0" layoutY="27.0" text="Classement " textFill="#b91717">
+               <font>
+                  <Font name="Candara Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="699.0" prefWidth="903.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="event.entites.ParticiperController">
+   <children>
+      <ImageView fitHeight="43.0" fitWidth="407.0" layoutX="466.0" layoutY="169.0">
+         <image>
+            <Image url="@images/blue-bg.jpg" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" fontSmoothingType="LCD" layoutX="549.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Participer à un évenement" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="486.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom" />
+      <Text layoutX="486.0" layoutY="329.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prenom" />
+      <Text layoutX="486.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telephone" />
+      <Text layoutX="486.0" layoutY="420.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mail" />
+      <Button fx:id="btn" layoutX="719.0" layoutY="564.0" mnemonicParsing="false" onAction="#OnParticipe" prefHeight="43.0" prefWidth="116.0" styleClass="update-btn" stylesheets="@Back.css" text="PARTICIPER" />
+      <TextField fx:id="nom" layoutX="684.0" layoutY="264.0" prefHeight="30.0" prefWidth="187.0" styleClass="label-info" stylesheets="@Back.css" />
+      <TextField fx:id="prenom" layoutX="684.0" layoutY="308.0" prefHeight="31.0" prefWidth="187.0" styleClass="label-info" stylesheets="@Back.css" />
+      <TextField fx:id="tlf" layoutX="684.0" layoutY="351.0" prefHeight="31.0" prefWidth="187.0" styleClass="label-info" stylesheets="@Back.css" />
+      <TextField fx:id="mail" layoutX="684.0" layoutY="399.0" prefHeight="31.0" prefWidth="187.0" styleClass="label-info" stylesheets="@Back.css" />
+      <Text layoutX="484.0" layoutY="463.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix" />
+      <ComboBox fx:id="activitesid" layoutX="685.0" layoutY="495.0" prefHeight="33.0" prefWidth="187.0" styleClass="label-info" stylesheets="@Back.css" />
+      <Text layoutX="484.0" layoutY="516.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Activités" />
+      <TextField fx:id="prix" layoutX="684.0" layoutY="442.0" prefHeight="31.0" prefWidth="187.0" styleClass="label-info" stylesheets="@Back.css" />
+      <AnchorPane prefHeight="127.0" prefWidth="953.0" styleClass="black-bg" stylesheets="@dashboardDesign.css">
+         <children>
+            <ImageView fitHeight="118.0" fitWidth="137.0" layoutX="25.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/big_0744e95099e3049f.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="front" layoutX="253.0" layoutY="49.0" mnemonicParsing="false" onAction="#OnFront" styleClass="navbar-btn" stylesheets="@dashboardDesign.css" text="HOME" />
+            <Button layoutX="322.0" layoutY="49.0" mnemonicParsing="false" styleClass="navbar-btn" stylesheets="@../../../../../../Desktop/tunisport/src/Views/dashboardDesign.css" text="ABOUT" />
+            <Button layoutX="395.0" layoutY="49.0" mnemonicParsing="false" styleClass="navbar-btn" stylesheets="@../../../../../../Desktop/tunisport/src/Views/dashboardDesign.css" text="NUTRITIF" />
+            <Button layoutX="473.0" layoutY="49.0" mnemonicParsing="false" styleClass="navbar-btn" stylesheets="@../../../../../../Desktop/tunisport/src/Views/dashboardDesign.css" text="BLOG" />
+            <Circle layoutX="837.0" layoutY="64.0" radius="10.0" stroke="WHITE" strokeType="INSIDE" />
+            <Circle layoutX="868.0" layoutY="64.0" radius="10.0" stroke="WHITE" strokeType="INSIDE" />
+            <Circle layoutX="901.0" layoutY="64.0" radius="10.0" stroke="WHITE" strokeType="INSIDE" />
+            <Button layoutX="828.0" layoutY="7.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="111.0" styleClass="sign-btn" stylesheets="@../../../../../../Desktop/tunisport/src/Views/dashboardDesign.css" text="SIGNUP/LOGIN">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="8.0" fitWidth="8.0" layoutX="314.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="14.0" fitWidth="14.0" layoutX="830.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-f-de-facebook-24_1.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="14.0" fitWidth="14.0" layoutX="861.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-instagram-64.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="14.0" fitWidth="14.0" layoutX="894.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-twitter-50_1.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="528.0" layoutY="49.0" mnemonicParsing="false" styleClass="navbar-btn" stylesheets="@../../../../../../Desktop/tunisport/src/Views/dashboardDesign.css" text="COACH" />
+            <Button fx:id="admin" layoutX="595.0" layoutY="49.0" mnemonicParsing="false" onAction="#Admin" styleClass="navbar-btn" stylesheets="@../../../../../../Desktop/tunisport/src/Views/dashboardDesign.css" text="ADMIN" />
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="43.0" fitWidth="407.0" layoutX="467.0" layoutY="639.0">
+         <image>
+            <Image url="@images/blue-bg.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="480.0" layoutY="652.0" text="Contact" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="749.0" layoutY="652.0" text="+216 99 801 569" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="588.0" layoutY="652.0" text="pidev96@gmail.com" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="26.0" layoutY="164.0" prefHeight="516.0" prefWidth="430.0">
+         <children>
+            <ImageView fitHeight="206.0" fitWidth="174.0" layoutX="14.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/pngtree-purple-sport-fitness-flyer-png-image_5325916.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="206.0" fitWidth="174.0" layoutX="235.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/0de97c41a0da7409f62e0a8e3f08b842.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="206.0" fitWidth="174.0" layoutX="235.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/ev2.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="206.0" fitWidth="174.0" layoutX="28.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/event1.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

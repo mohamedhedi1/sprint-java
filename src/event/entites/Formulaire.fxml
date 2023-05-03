@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="528.0" prefWidth="1104.0" stylesheets="@Back.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="event.entites.FormulaireController">
+   <children>
+      <Label layoutX="322.0" layoutY="248.0" text="Titre" />
+      <Label layoutX="299.0" layoutY="301.0" text="Description" />
+      <Label layoutX="298.0" layoutY="345.0" text="Localisation" />
+      <Label layoutX="313.0" layoutY="396.0" text="Images" />
+      <Label layoutX="302.0" layoutY="444.0" text="Categories" />
+      <TextField fx:id="tfTitre" layoutX="450.0" layoutY="239.0" prefHeight="33.0" prefWidth="179.0" styleClass="label-info" />
+      <TextField fx:id="tfDescription2" layoutX="451.0" layoutY="295.0" prefHeight="33.0" prefWidth="179.0" styleClass="label-info" />
+      <TextField fx:id="tfImage" layoutX="450.0" layoutY="341.0" prefHeight="33.0" prefWidth="179.0" styleClass="label-info" />
+      <TextField fx:id="tfLoc" layoutX="450.0" layoutY="391.0" prefHeight="30.0" prefWidth="180.0" styleClass="label-info" />
+      <ComboBox fx:id="cbCategorie" layoutX="450.0" layoutY="438.0" prefHeight="31.0" prefWidth="180.0" styleClass="label-info" />
+      <Button fx:id="btnUploadImage" layoutX="643.0" layoutY="390.0" mnemonicParsing="false" onAction="#uploadImage" prefHeight="33.0" prefWidth="78.0" styleClass="update-btn" text="Upload" />
+      <AnchorPane prefHeight="84.0" prefWidth="1104.0" stylesheets="@Back.css">
+         <children>
+            <Label layoutX="75.0" layoutY="31.0" prefHeight="18.0" prefWidth="481.0" text="SportConnect">
+               <font>
+                  <Font name="Times New Roman Bold" size="19.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="30.0" fitWidth="28.0" layoutX="469.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8_settings_26px_2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="28.0" layoutX="543.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8_bell_24px.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="28.0" layoutX="506.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8_help_32px.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="82.0" fitWidth="75.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/Sport%20connect%20(5).png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="search" layoutX="254.0" layoutY="26.0" promptText="Recherche" />
+         </children>
+         <styleClass>
+            <String fx:value="top-form" />
+            <String fx:value="white-bg" />
+         </styleClass>
+      </AnchorPane>
+      <AnchorPane layoutY="82.0" prefHeight="446.0" prefWidth="256.0" styleClass="nav-form" stylesheets="@Back.css">
+         <children>
+            <Label layoutX="28.0" layoutY="73.0" text="Welcome" textFill="WHITE">
+               <font>
+                  <Font name="Times New Roman Bold" size="36.0" />
+               </font>
+            </Label>
+            <Line endX="80.0" layoutX="106.0" layoutY="158.0" startX="-80.0" stroke="WHITE" />
+            <Pane layoutX="54.0" layoutY="122.0" prefHeight="30.0" prefWidth="180.0" styleClass="labbtn">
+               <children>
+                  <Label alignment="CENTER" layoutX="20.0" layoutY="-6.0" text="Profile" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman Bold" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="42.0" layoutY="142.0" />
+            <Button fx:id="btnUser" contentDisplay="TEXT_ONLY" layoutX="47.0" layoutY="221.0" mnemonicParsing="false" onAction="#Activites" prefHeight="25.0" prefWidth="151.0" styleClass="nav-btn" stylesheets="@Back.css" text="Gestion Activités" textOverrun="CLIP" />
+            <Button fx:id="btnBlog" contentDisplay="TEXT_ONLY" layoutX="47.0" layoutY="266.0" mnemonicParsing="false" onAction="#Categories" prefHeight="25.0" prefWidth="151.0" styleClass="nav-btn" stylesheets="@Back.css" text="Gestion Catégories" textOverrun="CLIP" />
+            <Button fx:id="btnEvent" contentDisplay="TEXT_ONLY" layoutX="47.0" layoutY="311.0" mnemonicParsing="false" onAction="#participants" prefHeight="25.0" prefWidth="151.0" styleClass="nav-btn" stylesheets="@Back.css" text="Gestion Participants" textOverrun="CLIP" />
+            <FontAwesomeIcon fill="#f8eded" glyphName="FIRE" layoutX="28.0" layoutY="239.0" />
+            <FontAwesomeIcon fill="#eee1e1" glyphName="TROPHY" layoutX="27.0" layoutY="284.0" />
+            <FontAwesomeIcon fill="#fcf7f7" glyphName="MALE" layoutX="29.0" layoutY="329.0" />
+            <Button id="idreturn" fx:id="idreturn" layoutX="70.0" layoutY="347.0" mnemonicParsing="false" onAction="#OnReturn" prefHeight="21.0" prefWidth="60.0" styleClass="nav-btn" stylesheets="@Back.css" text="🔙">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Label alignment="CENTER" layoutX="298.0" layoutY="128.0" text="Evenements" textFill="#4b4642">
+         <font>
+            <Font name="Berlin Sans FB" size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="298.0" layoutY="170.0" text="Modifier un évenement" textFill="#545352">
+         <font>
+            <Font name="Berlin Sans FB" size="14.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="433.0" fitWidth="304.0" layoutX="800.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/Cycling-event-poster-e1623405403716-724x1024.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

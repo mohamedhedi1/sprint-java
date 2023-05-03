@@ -1,0 +1,55 @@
+/* Style pour le bouton Supprimer */
+#Supprimer {
+    -fx-background-color: #dc3545; /* couleur de fond */
+    -fx-text-fill: #fff; /* couleur du texte */
+    -fx-font-size: 14px; /* taille de la police */
+}
+
+/* Style pour l'étiquette userCountLabel */
+#userCountLabel {
+    -fx-font-size: 16px; /* taille de la police */
+    -fx-font-weight: bold; /* poids de la police */
+}
+
+/* Style pour la ListView CategoriesListView */
+#CategoriesListView {
+    -fx-background-color: #f8f9fa; /* couleur de fond */
+    -fx-font-size: 14px; /* taille de la police */
+}
+
+/* Style pour le bouton Update */
+#Update {
+    -fx-background-color: #007bff; /* couleur de fond */
+    -fx-text-fill: #fff; /* couleur du texte */
+    -fx-font-size: 14px; /* taille de la police */
+}
+
+/* Style pour le bouton btnaj */
+#btnaj {
+    -fx-background-color: #28a745; /* couleur de fond */
+    -fx-text-fill: #fff; /* couleur du texte */
+    -fx-font-size: 14px; /* taille de la police */
+}
+
+/* Style pour le bouton idreturn */
+#idreturn {
+    -fx-background-color: #6c757d; /* couleur de fond */
+    -fx-text-fill: #fff; /* couleur du texte */
+    -fx-font-size: 14px; /* taille de la police */
+}
+
+/* Style pour la TableView abc */
+#abc {
+    -fx-background-color: #fff; /* couleur de fond */
+    -fx-font-size: 14px; /* taille de la police */
+}
+
+/* Style pour la colonne nn */
+#nn {
+    -fx-font-weight: bold; /* poids de la police */
+}
+
+/* Style pour la colonne dd */
+#dd {
+    -fx-font-style: italic; /* style de la police */
+}

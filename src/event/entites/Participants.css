@@ -1,0 +1,37 @@
+/* Styliser tous les boutons */
+.button {
+    -fx-background-color: #4CAF50; /* couleur de fond */
+    -fx-text-fill: white; /* couleur de texte */
+    -fx-font-size: 14px; /* taille de police */
+    -fx-padding: 8px 16px; /* padding */
+}   
+
+/* Styliser tous les champs de texte */
+.text-field {
+    -fx-background-color: white; /* couleur de fond */
+    -fx-text-fill: #333; /* couleur de texte */
+    -fx-font-size: 14px; /* taille de police */
+    -fx-padding: 8px; /* padding */
+}
+
+/* Styliser toutes les tables */
+.table-view {
+    -fx-background-color: #F0F0F0; /* couleur de fond */
+    -fx-font-size: 14px; /* taille de police */
+}
+
+/* Styliser toutes les colonnes */
+.table-column {
+    -fx-font-size: 14px; /* taille de police */
+}
+
+/* Styliser tous les labels */
+.label {
+    -fx-font-size: 14px; /* taille de police */
+}
+
+/* Styliser tous les panneaux */
+.anchor-pane {
+    -fx-background-color: #F0F0F0; /* couleur de fond */
+    -fx-padding: 16px; /* padding */
+}

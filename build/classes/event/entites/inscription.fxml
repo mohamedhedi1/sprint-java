@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="499.0" prefWidth="1114.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="event.entites.InscriptionController">
+   <children>
+      <Label layoutX="298.0" layoutY="232.0" text="Nom" />
+      <TextField fx:id="tfNom" layoutX="444.0" layoutY="227.0" prefHeight="31.0" prefWidth="179.0" styleClass="label-info" />
+      <Label layoutX="298.0" layoutY="312.0" text="Description" />
+      <TextField fx:id="tfDescription" layoutX="444.0" layoutY="307.0" prefHeight="31.0" prefWidth="179.0" styleClass="label-info" />
+      <Button fx:id="tfBtn" layoutX="421.0" layoutY="401.0" mnemonicParsing="false" onAction="#OnClick" prefHeight="31.0" prefWidth="86.0" styleClass="add-btn" text="Ajouter" />
+      <AnchorPane layoutY="-3.0" prefHeight="84.0" prefWidth="1121.0" stylesheets="@Back.css">
+         <children>
+            <Label layoutX="75.0" layoutY="31.0" prefHeight="18.0" prefWidth="481.0" text="SportConnect">
+               <font>
+                  <Font name="Times New Roman Bold" size="19.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="30.0" fitWidth="28.0" layoutX="469.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8_settings_26px_2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="28.0" layoutX="543.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8_bell_24px.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="28.0" layoutX="506.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8_help_32px.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="82.0" fitWidth="75.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/Sport%20connect%20(5).png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="search" layoutX="254.0" layoutY="26.0" promptText="Recherche" />
+         </children>
+         <styleClass>
+            <String fx:value="top-form" />
+            <String fx:value="white-bg" />
+         </styleClass>
+      </AnchorPane>
+      <AnchorPane layoutY="78.0" prefHeight="446.0" prefWidth="256.0" styleClass="nav-form" stylesheets="@Back.css">
+         <children>
+            <Label layoutX="28.0" layoutY="73.0" text="Welcome" textFill="WHITE">
+               <font>
+                  <Font name="Times New Roman Bold" size="36.0" />
+               </font>
+            </Label>
+            <Line endX="80.0" layoutX="106.0" layoutY="158.0" startX="-80.0" stroke="WHITE" />
+            <Pane layoutX="54.0" layoutY="122.0" prefHeight="30.0" prefWidth="180.0" styleClass="labbtn">
+               <children>
+                  <Label alignment="CENTER" layoutX="20.0" layoutY="-6.0" text="Profile" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman Bold" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="42.0" layoutY="142.0" />
+            <Button fx:id="btnUser" contentDisplay="TEXT_ONLY" layoutX="47.0" layoutY="221.0" mnemonicParsing="false" onAction="#Activites" prefHeight="25.0" prefWidth="151.0" styleClass="nav-btn" stylesheets="@Back.css" text="Gestion Activités" textOverrun="CLIP" />
+            <Button fx:id="btnBlog" contentDisplay="TEXT_ONLY" layoutX="47.0" layoutY="266.0" mnemonicParsing="false" onAction="#Categories" prefHeight="25.0" prefWidth="151.0" styleClass="nav-btn" stylesheets="@Back.css" text="Gestion Catégories" textOverrun="CLIP" />
+            <Button fx:id="btnEvent" contentDisplay="TEXT_ONLY" layoutX="47.0" layoutY="311.0" mnemonicParsing="false" onAction="#participants" prefHeight="25.0" prefWidth="151.0" styleClass="nav-btn" stylesheets="@Back.css" text="Gestion Participants" textOverrun="CLIP" />
+            <FontAwesomeIcon fill="#f8eded" glyphName="FIRE" layoutX="28.0" layoutY="239.0" />
+            <FontAwesomeIcon fill="#eee1e1" glyphName="TROPHY" layoutX="27.0" layoutY="284.0" />
+            <FontAwesomeIcon fill="#fcf7f7" glyphName="MALE" layoutX="29.0" layoutY="329.0" />
+            <Button id="idreturn" fx:id="idreturn" layoutX="70.0" layoutY="347.0" mnemonicParsing="false" onAction="#OnReturn" prefHeight="21.0" prefWidth="60.0" styleClass="nav-btn" stylesheets="@Back.css" text="🔙">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Label alignment="CENTER" layoutX="298.0" layoutY="128.0" text="Catégories" textFill="#4b4642">
+         <font>
+            <Font name="Berlin Sans FB" size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="298.0" layoutY="170.0" text="Ajouter une catégorie" textFill="#545352">
+         <font>
+            <Font name="Berlin Sans FB" size="14.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="446.0" fitWidth="316.0" layoutX="805.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/modèle-d-affiche-pour-l-événement-sportif-fond-design-avec-élément-en-boucle-la-compétition-ou-le-championnat-événements-213010136.jpg" />
+         </image>
+      </ImageView>
+   </children>
+   <stylesheets>
+      <URL value="@Ajouter.css" />
+      <URL value="@Back.css" />
+   </stylesheets>
+</AnchorPane>

@@ -1,0 +1,66 @@
+/* Boutons */
+.button {
+    -fx-background-color: #2196f3;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-padding: 10px 20px;
+    -fx-border-color: #1976d2;
+    -fx-border-width: 2px;
+    -fx-background-radius: 25px;
+    -fx-border-radius: 25px;
+    -fx-cursor: hand;
+    -fx-transition: all 0.2s ease;
+}
+
+.button:hover {
+    -fx-background-color: #1976d2;
+    -fx-border-color: #0d47a1;
+}
+
+.button:pressed {
+    -fx-background-color: #0d47a1;
+    -fx-border-color: #0d47a1;
+}
+
+/* Image */
+.ImageView {
+    -fx-padding: 10px;
+}
+
+/* Scene */
+.scene {
+    -fx-background-color: #f2f2f2;
+}
+
+/* Titre */
+#idtitre {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Arial Black", sans-serif;
+}
+
+/* Retour */
+#idreturn {
+    -fx-background-color: #f44336;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-padding: 10px 20px;
+    -fx-border-color: #d32f2f;
+    -fx-border-width: 2px;
+    -fx-background-radius: 25px;
+    -fx-border-radius: 25px;
+    -fx-cursor: hand;
+    -fx-transition: all 0.2s ease;
+}
+
+#idreturn:hover {
+    -fx-background-color: #d32f2f;
+    -fx-border-color: #b71c1c;
+}
+
+#idreturn:pressed {
+    -fx-background-color: #b71c1c;
+    -fx-border-color: #b71c1c;
+}

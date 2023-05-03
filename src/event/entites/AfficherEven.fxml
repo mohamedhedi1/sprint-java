@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="590.0" prefWidth="1214.0" stylesheets="@Back.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="event.entites.AfficherEvenController">
+   <children>
+      <ListView fx:id="EvenListView" layoutX="523.0" layoutY="113.0" orientation="HORIZONTAL" prefHeight="368.0" prefWidth="615.0" styleClass="table-view" stylesheets="@Back.css">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets></ListView>
+      <Label fx:id="userCountLabel" layoutX="333.0" layoutY="164.0" prefHeight="22.0" prefWidth="190.0" text="Liste des Evenements">
+         <font>
+            <Font name="Berlin Sans FB" size="14.0" />
+         </font></Label>
+      <Button fx:id="btnsupp" layoutX="350.0" layoutY="271.0" mnemonicParsing="false" onAction="#OnDelete" prefHeight="40.0" prefWidth="81.0" styleClass="delete-btn" stylesheets="@Back.css" text="Supprimer" />
+      <Button fx:id="btnupdate" layoutX="351.0" layoutY="336.0" mnemonicParsing="false" onAction="#OnUpdate" prefHeight="40.0" prefWidth="81.0" styleClass="update-btn" stylesheets="@Back.css" text="Update" />
+      <Button fx:id="btnaddd" layoutX="350.0" layoutY="209.0" mnemonicParsing="false" onAction="#OnAdd" prefHeight="40.0" prefWidth="81.0" styleClass="add-btn" stylesheets="@Back.css" text="Ajouter" />
+      <Button fx:id="pdf" layoutX="350.0" layoutY="404.0" mnemonicParsing="false" onAction="#OnDownload" prefHeight="31.0" prefWidth="81.0" styleClass="import-btn" stylesheets="@Back.css" text="PDF 📩">
+         <font>
+            <Font name="Arial Narrow Bold" size="14.0" />
+         </font>
+      </Button>
+      <AnchorPane layoutX="6.0" prefHeight="84.0" prefWidth="1208.0" stylesheets="@Back.css">
+         <children>
+            <Label layoutX="76.0" layoutY="31.0" prefHeight="18.0" prefWidth="481.0" text="SportConnect">
+               <font>
+                  <Font name="Times New Roman Bold" size="19.0" />
+               </font>
+            </Label>
+            <TextField fx:id="match_search" layoutX="223.0" layoutY="27.0" opacity="0.5" prefHeight="30.0" prefWidth="222.0" promptText="Search Drive" style="-fx-background-color: transparent; -fx-border-radius: 50px; -fx-border-color: #AEB2C3;" text="Rechercher">
+               <font>
+                  <Font name="Berlin Sans FB" size="13.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#b9b6b6" />
+               </effect>
+            </TextField>
+            <ImageView fitHeight="30.0" fitWidth="28.0" layoutX="469.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8_settings_26px_2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="28.0" layoutX="543.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8_bell_24px.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="28.0" layoutX="506.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8_help_32px.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="82.0" fitWidth="75.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/Sport%20connect%20(5).png" />
+               </image>
+            </ImageView>
+         </children>
+         <styleClass>
+            <String fx:value="top-form" />
+            <String fx:value="white-bg" />
+         </styleClass>
+      </AnchorPane>
+      <AnchorPane layoutY="84.0" prefHeight="517.0" prefWidth="220.0" styleClass="nav-form" stylesheets="@Back.css">
+         <children>
+            <Label layoutX="28.0" layoutY="73.0" text="Welcome" textFill="WHITE">
+               <font>
+                  <Font name="Times New Roman Bold" size="36.0" />
+               </font>
+            </Label>
+            <Line endX="80.0" layoutX="106.0" layoutY="158.0" startX="-80.0" stroke="WHITE" />
+            <Pane layoutX="54.0" layoutY="122.0" prefHeight="30.0" prefWidth="180.0" styleClass="labbtn">
+               <children>
+                  <Label alignment="CENTER" layoutX="20.0" layoutY="-6.0" text="Profile" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman Bold" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="42.0" layoutY="142.0" />
+            <Button fx:id="btnUser" contentDisplay="TEXT_ONLY" layoutX="47.0" layoutY="221.0" mnemonicParsing="false" onAction="#Activites" prefHeight="25.0" prefWidth="151.0" styleClass="nav-btn" stylesheets="@Back.css" text="Gestion Activités" textOverrun="CLIP" />
+            <Button fx:id="btnBlog" contentDisplay="TEXT_ONLY" layoutX="47.0" layoutY="266.0" mnemonicParsing="false" onAction="#Categories" prefHeight="25.0" prefWidth="151.0" styleClass="nav-btn" stylesheets="@Back.css" text="Gestion Catégories" textOverrun="CLIP" />
+            <Button fx:id="btnEvent" contentDisplay="TEXT_ONLY" layoutX="47.0" layoutY="311.0" mnemonicParsing="false" onAction="#participants" prefHeight="25.0" prefWidth="151.0" styleClass="nav-btn" stylesheets="@Back.css" text="Gestion Participants" textOverrun="CLIP" />
+            <FontAwesomeIcon fill="#f8eded" glyphName="FIRE" layoutX="28.0" layoutY="239.0" />
+            <FontAwesomeIcon fill="#eee1e1" glyphName="TROPHY" layoutX="27.0" layoutY="284.0" />
+            <FontAwesomeIcon fill="#fcf7f7" glyphName="MALE" layoutX="29.0" layoutY="329.0" />
+            <Button fx:id="idreturn" layoutX="84.0" layoutY="361.0" mnemonicParsing="false" onAction="#OnReturn" prefHeight="31.0" prefWidth="60.0" styleClass="nav-btn" stylesheets="@Back.css" text="🔙">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Label alignment="CENTER" layoutX="333.0" layoutY="126.0" text="Participants" textFill="#4b4642">
+         <font>
+            <Font name="Berlin Sans FB" size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

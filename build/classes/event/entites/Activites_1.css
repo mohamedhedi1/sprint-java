@@ -1,0 +1,69 @@
+/* Styliser les boutons */
+.button {
+    -fx-background-color: #4CAF50; /* couleur de fond */
+    -fx-text-fill: white; /* couleur de texte */
+    -fx-font-size: 14px; /* taille de police */
+    -fx-padding: 8px 16px; /* padding */
+    -fx-background-radius: 5px; /* arrondir les bords */
+}
+
+.button:hover {
+    -fx-background-color: #3E8E41; /* couleur de fond au survol */
+}
+
+/* Styliser les champs de texte */
+.text-field {
+    -fx-background-color: #F0F0F0; /* couleur de fond */
+    -fx-text-fill: #333; /* couleur de texte */
+    -fx-font-size: 14px; /* taille de police */
+    -fx-padding: 8px; /* padding */
+    -fx-background-radius: 5px; /* arrondir les bords */
+}
+
+/* Styliser les ComboBox */
+.combo-box {
+    -fx-background-color: #F0F0F0; /* couleur de fond */
+    -fx-text-fill: #333; /* couleur de texte */
+    -fx-font-size: 14px; /* taille de police */
+    -fx-padding: 8px; /* padding */
+    -fx-background-radius: 5px; /* arrondir les bords */
+}
+
+/* Styliser les options de ComboBox */
+.combo-box .list-cell {
+    -fx-background-color: #F0F0F0; /* couleur de fond */
+    -fx-text-fill: #333; /* couleur de texte */
+    -fx-font-size: 14px; /* taille de police */
+}
+
+/* Styliser les étiquettes */
+.label {
+    -fx-font-size: 14px; /* taille de police */
+    -fx-font-weight: bold; /* gras */
+}
+
+/* Styliser les panneaux */
+.anchor-pane {
+    -fx-background-color: white; /* couleur de fond */
+    -fx-padding: 16px; /* padding */
+}
+
+/* Styliser les images */
+.image-view {
+    -fx-background-color: #F0F0F0; /* couleur de fond */
+    -fx-background-radius: 5px; /* arrondir les bords */
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.5) , 10,0,0,1 ); /* ombre */
+}
+
+/* Styliser le bouton d'upload d'image */
+#btnUploadImage {
+    -fx-background-color: #4CAF50; /* couleur de fond */
+    -fx-text-fill: white; /* couleur de texte */
+    -fx-font-size: 14px; /* taille de police */
+    -fx-padding: 8px 16px; /* padding */
+    -fx-background-radius: 5px; /* arrondir les bords */
+}
+
+#btnUploadImage:hover {
+    -fx-background-color: #3E8E41; /* couleur de fond au survol */
+}
